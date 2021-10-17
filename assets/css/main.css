@@ -175,6 +175,7 @@ html {
 
 body {
     background: #fff;
+    /* background-image: url("../css/images/stars.jpg"); */
 }
 
 body.is-preload *,
@@ -2393,11 +2394,11 @@ input[type="button"]:disabled,
     justify-content: space-between;
     background-color: #1f1815;
     background-attachment: scroll, scroll;
-    background-image: url("images/Chicago.JPG");
+    background-image: url("/images/Chicago.JPG");
     background-position: top left, top left;
-    background-repeat: repeat, no-repeat;
-    background-size: auto, 150%;
-    color: rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    color: rgb(255, 255, 255);
     height: 100%;
     left: 0;
     padding: 8em 4em;
@@ -2425,7 +2426,7 @@ input[type="button"]:disabled,
 
 #header strong,
 #header b {
-    color: #ffffff;
+    color: #ac69a0;
 }
 
 #header h2,
@@ -2437,7 +2438,7 @@ input[type="button"]:disabled,
 }
 
 #header h1 {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     font-size: 1.35em;
     line-height: 1.75em;
     margin: 0;
