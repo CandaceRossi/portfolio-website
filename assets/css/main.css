@@ -2971,8 +2971,9 @@ body.is-touch .poptrox-popup .closer {
     }
 }
 
-
-/* .show {} */
+.show {
+    color: #000000
+}
 
 .hide {
     opacity: 0;

@@ -209,7 +209,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     <script src="/assets/js/main.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- potentially axios promise issue, might need to use node-fetch -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         async function submit() {
             console.log(document.getElementById('name').value)
             const newName = document.getElementById('name').value
@@ -224,42 +224,77 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         Accept: "application/json",
                         "Content-Type": "application/json",
                     },
-                })
-                .then(response => {
-                    return response.body;
-                    console.log('success', response.body);
-                    document.getElementById("FORM").reset()
+                }).then(response => {
+                    return response;
+                    console.log('success', response);
                 })
                 .catch(function(response) {
                     console.log('error');
                 });
         }
-    </script>
-    <script type="text/javascript">
-        let form = document.getElementById("submit");
-        form.addEventListener("onclick", evt => {
-
-            evt.preventDefault();
-            var my_text = document.getElementById("text");
-            //Set timeout delay to 500 milliseconds
-            var delay = 500;
-
-            //Have a global variable to reset the timer
-            var my_timer;
-            //Declare the onclick event handler
-            function text_onclick(e) {
-                /*
-                    Clear the timer so we don't create more timers
-                    that will trigger the callback several times
-                */
-                if (my_timer) clearTimeout(my_timer);
-                if (my_text.class === "hide")
-                    my_timer = setTimeout(click_callback, delay)
-                else
-                    my_text.class = "hide";
+    </script> -->
+    <script>
+        async function submit() {
+            console.log(document.getElementById('name').value)
+            const newName = document.getElementById('name').value
+            const newEmail = document.getElementById('email').value
+            const newMessage = document.getElementById('message').value
+            const text = document.querySelector('.hide');
+            setTimeout(() => {
+                    document.getElementById("FORM").reset()
+                },
+                3000);
+            setTimeout(() => {
+                    if (text.getAttribute("class") === "hide") {
+                        text.setAttribute("class", "show")
+                    } else {
+                        text.setAttribute("class", "hide");
+                    }
+                },
+                4000);
+            try {
+                const response = await axios.post(
+                    "/send", {
+                        name: newName,
+                        email: newEmail,
+                        message: newMessage
+                    }, {
+                        headers: {
+                            Accept: "application/json",
+                            "Content-Type": "application/json",
+                        },
+                    });
+                document.getElementById("FORM").reset()
+                const data = await response.data;
+                return {
+                    name: data.name,
+                    email: data.email,
+                    message: data.message,
+                    error: false
+                };
+            } catch (error) {
+                return {
+                    user: null,
+                    email: null,
+                    message: null,
+                    error: true
+                };
             }
-        });
+
+            (async function() {
+                let response = await submit();
+                console.log(response);
+            })()
+        }
     </script>
+    <!-- <script type="text/javascript">
+        let form = document.getElementById("submit");
+        var my_text = document.getElementById("text");
+        form.onclick = function text_onclick() {
+            my_text.class = "hide";
+            setTimeout(text_onclick, 3000);
+        };
+    </script> -->
 </body>
 
 </html>
