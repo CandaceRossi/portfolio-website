@@ -1,32 +1,74 @@
-// var http = require('http');
-// var fs = require('fs');
-
-// const PORT=8080; 
-
-// fs.readFile('./index.html', function (err, html) {
-
-//     if (err) throw err;    
-
-//     http.createServer(function(request, response) {  
-//         response.writeHeader(200, {"Content-Type": "text/html"});  
-//         response.write(html);  
-//         response.end();  
-//     }).listen(PORT);
-// });
-
 const express = require('express');
-const app = new express();
-var path = require("path");
+const creds = require('./config');
+const PORT = creds.PORT || 3001;
+const nodemailer = require("nodemailer");
 
+const app = new express();
+const cors = require('cors');
 //static files
-app.use(express.static('assets'));
-app.use(express.static(__dirname + 'assets/css'));
-app.use(express.static(__dirname + 'assets/fonts'));
-app.use(express.static(__dirname + 'assets/js'));
-app.use(express.static(__dirname + 'assets/sass'));
+var path = require("path");
+app.use(express.static(path.join(__dirname, 'assets')));
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+// var bodyParser = require('body-parser');
+// app.use(bodyParser.json()); // for parsing application/json
+// app.use(bodyParser.urlencoded({ extended: true })); 
+
+app.use(function(req, res, next) {
+     res.header("Access-Control-Allow-Origin", "*");
+     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+     next();
+});
 
 app.get('', function(request, response){
     response.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.listen(3001, ()=>{console.log("server is up")} ) 
+// app.get('/send', function(req,res){
+//   console.log("first this get request", res)
+// res.send("we received your info!")
+// });
+
+app.post('/send', (req, res) => {
+  let newData = req.body 
+  console.log("whatcha want", req.body)
+  let smtpTransport = nodemailer.createTransport({
+    service: 'Gmail',
+    port: 465,
+    auth: {
+      user: creds.USER,
+      pass: creds.PASS
+    }
+  })
+
+
+let mailOptions = {
+  from: "rossicandace85@gmail.com",
+  to: "rossicandace85@gmail.com",
+  subject: `Message from ${newData.name}`,
+  html: `
+  <h3>Information</h3>
+  <ul>
+  <li>Name: ${newData.name}</li>
+  <li>Email: ${newData.email}</li>
+  <h3>Message</h3>
+  <p>${newData.message}</p>
+  </ul>
+  `
+};
+
+smtpTransport.sendMail(mailOptions, (error, res) => {
+  if(error){
+    console.log(error)
+    smtpTransport.close();
+  }
+  else{    
+    console.log("data was received", res)
+    smtpTransport.close();
+  }
+})
+  smtpTransport.close();
+})
+
+app.listen(PORT, () => console.log("server is up"));

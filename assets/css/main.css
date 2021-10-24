@@ -2394,7 +2394,7 @@ input[type="button"]:disabled,
     justify-content: space-between;
     background-color: #1f1815;
     background-attachment: scroll, scroll;
-    background-image: url("/images/Chicago.JPG");
+    background-image: url("/images/forest7.JPG");
     background-position: top left, top left;
     background-repeat: no-repeat !important;
     background-size: cover;
@@ -2426,7 +2426,7 @@ input[type="button"]:disabled,
 
 #header strong,
 #header b {
-    color: #ac69a0;
+    color: #00ffbf;
 }
 
 #header h2,
@@ -2438,7 +2438,7 @@ input[type="button"]:disabled,
 }
 
 #header h1 {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-size: 1.35em;
     line-height: 1.75em;
     margin: 0;
@@ -2969,4 +2969,18 @@ body.is-touch .poptrox-popup .closer {
         margin-left: 0;
         padding-left: 0;
     }
+}
+
+
+/* .show {} */
+
+.hide {
+    opacity: 0;
+}
+
+#hiddencontainer {
+    /* border: 1px solid lightgray; */
+    padding: 3px 5px;
+    margin-bottom: 5px;
+    display: inline-block;
 }
