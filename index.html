@@ -76,7 +76,7 @@
                 </article>
             </div>
             <ul class="actions">
-                <li><a href="#" class="button">Full Portfolio</a></li>
+                <li><a href="#" onclick="tog()" class="button togg">Full Portfolio</a></li>
             </ul>
         </section>
 
@@ -127,17 +127,17 @@
             <!-- <h2>Elements</h2> -->
 
             <section class="actions">
-                <p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Let’s dream in technology! As each day passes in our age, our abilities in technology are those of an innovator’s wildest dream. It wasn’t until I became a mother that
-                    I made the career shift to work in the field. My tech journey began in my consideration for my daughter’s future, which revealed that society relies heavily in tech advancement. I realized that this notion to teach my girl to be savvy
-                    for her future began at home with myself. What was a dream of understanding the fast paced world quickly became an eye opener. I jumped in head-first. Since software was the communicative pathway, I began learning its inner-workings.
-                    My inital exposure was html, css, and javascript builds. I decided to delve into an intensive bootcamp to help elevate and give streamline to achieving a deeper understanding, alongside career potential. I am thankful for what the
-                    software school offered. As I continue to build in the tech stacks and languages that were focal points throughout the course, I have additionally expanded into neighboring software technologies. My daughter often learns alongside
-                    me and she really enjoys it. I'd say her future is bright and our builds are of our wildest dreams!
+                <p><span class="image left"><img style="width: 113px; height: 113px;" src="/images/L.png" alt="Letter L" /></span>et’s dream in technology! As each day passes in our age, our abilities in technology are those of an innovator’s wildest dream.
+                    It wasn’t until I became a mother that I made the career shift to work in the field. My tech journey began in my consideration for my daughter’s future, which revealed that society relies heavily in tech advancement. I realized that
+                    this notion to teach my girl to be savvy for her future began at home with myself. What was a dream of understanding the fast paced world quickly became an eye opener. I jumped in head-first. Since software was the communicative pathway,
+                    I began learning its inner-workings. My inital exposure was html, css, and javascript builds. I decided to delve into an intensive bootcamp to help elevate and give streamline to achieving a deeper understanding, alongside career potential.
+                    I am thankful for what the software school offered. As I continue to build in the tech stacks and languages that were focal points throughout the course, I have additionally expanded into neighboring software technologies. My daughter
+                    often learns alongside me and she really enjoys it. I'd say her future is bright and our builds are of our wildest dreams!
                 </p>
-                <p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>I love Jamstack! Javascript, APIs, and Markup. I often use Reactjs on the front end, and RESTful APIs to build in Nodejs on the backend. Databases I am familiar with
-                    are PostgresSQL, MySQL, and SQLite (for development). I have had great pleasure building schemas and querying a single endpoint in GraphQL, which made for fast dynamic retrieval! My favorite coding languages are Javascript and Python.
-                    Python is the language I would like to build in more consistently as I graduate into using more computer science based concepts in my applications. I enjoy exploring usages of data structures, reckoning use cases with Big 0 Notation,
-                    and.
+                <p><span class="image right"><img style="width: 113px; height: 113px;" src="/images/candaceface .png" alt="cartoon image" /></span>I love Jamstack! Javascript, APIs, and Markup. I often use Reactjs on the front end, and RESTful APIs to build
+                    in Nodejs on the backend. Databases I am familiar with are PostgresSQL, MySQL, and SQLite (for development). I have had great pleasure building schemas and querying a single endpoint in GraphQL, which made for fast dynamic retrieval!
+                    My favorite coding languages are Javascript and Python. Python is the language I would like to build in more consistently as I graduate into using more computer science based concepts in my applications. I enjoy exploring usages of
+                    data structures, tree traversal, graphs, and reckoning use cases with Big 0 Notation.
                 </p>
             </section>
 
@@ -190,7 +190,7 @@
                 return magic
         </code>
                 </pre>
-                <h5>Philosophicl Takeaway</h5>
+                <h5>Philosophical Takeaway</h5>
                 <blockquote>“We are at the very beginning of time for the human race. It is not unreasonable that we grapple with problems. But there are tens of thousands of years in the future. Our responsibility is to do what we can, learn what we can, improve
                     the solutions, and pass them on. It is our responsibility to leave the people of the future a free hand. In the impetuous youth of humanity, we can make grave errors that can stunt our growth for a long time. This we will do if we
                     say we have the answers now, so young and ignorant as we are. If we suppress all discussion, all criticism, proclaiming “This is the answer, my friends; man is saved!” we will doom humanity for a long time to the chains of authority,
@@ -278,6 +278,24 @@
                 let response = await submit();
                 console.log(response);
             })()
+        }
+    </script>
+    <script>
+        function tog() {
+            var three = document.getElementById('three');
+            var four = document.getElementById('four');
+            var displaySetting1 = three.style.display;
+            var displaySetting2 = four.style.display;
+
+            if (displaySetting1 && displaySetting2 == 'block') {
+                //hide it
+                three.style.display = 'none';
+                four.style.display = 'none';
+            } else {
+                //show it
+                three.style.display = 'block';
+                four.style.display = 'block';
+            }
         }
     </script>
 </body>
