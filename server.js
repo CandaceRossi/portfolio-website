@@ -1,6 +1,6 @@
+const PORT = process.env.PORT || creds.PORT;
 const express = require('express');
 const creds = require('./config');
-const PORT = creds.PORT || 3001;
 const nodemailer = require("nodemailer");
 
 const app = new express();
