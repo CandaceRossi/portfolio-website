@@ -1660,7 +1660,7 @@ textarea:focus {
 }
 
 select {
-    background-image: url("/assets/images/IMG_7932.jpg");
+    background-image: url("/images/IMG_7932.jpg");
     background-size: 1.25rem;
     background-repeat: no-repeat;
     background-position: calc(100% - 1rem) center;
@@ -2395,7 +2395,7 @@ input[type="button"]:disabled,
     justify-content: space-between;
     background-color: #1f1815;
     background-attachment: scroll, scroll;
-    background-image: url("/images/forest7.JPG");
+    background-image: url("/images/forest7.jpg");
     background-position: top left, top left;
     background-repeat: no-repeat !important;
     background-size: cover;
