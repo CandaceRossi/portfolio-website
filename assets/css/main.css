@@ -2998,3 +2998,7 @@ body.is-touch .poptrox-popup .closer {
 .hidden {
     display: block;
 }
+
+.enbolden {
+    color: rgba(0, 0, 0, 0.623)
+}
