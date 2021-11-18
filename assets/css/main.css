@@ -1660,7 +1660,7 @@ textarea:focus {
 }
 
 select {
-    background-image: url("../images/IMG_7932.jpg");
+    background-image: url("/assets/images/IMG_7932.jpg");
     background-size: 1.25rem;
     background-repeat: no-repeat;
     background-position: calc(100% - 1rem) center;
