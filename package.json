@@ -1,6 +1,10 @@
 {
     "name": "portfolio-website",
     "version": "1.0.0",
+    "engines": {
+        "node": "14.x",
+        "npm": "7.x"
+    },
     "description": "With all of the projects you will be working on here at Lambda School, you will need somewhere to house them!  There is no better opportunity to learn and show off your skills than a beautiful portfolio website.",
     "main": "server.js",
     "scripts": {
@@ -22,6 +26,7 @@
         "@fortawesome/fontawesome-free": "^5.15.4",
         "axios": "^0.23.0",
         "body-parser": "^1.19.0",
+        "config": "^3.3.6",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "jquery": "^3.6.0",

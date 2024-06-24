@@ -1,6 +1,6 @@
+const PORT = process.env.PORT || 8080;
 const express = require('express');
 const creds = require('./config');
-const PORT = creds.PORT || 3001;
 const nodemailer = require("nodemailer");
 
 const app = new express();
@@ -21,7 +21,7 @@ app.use(function(req, res, next) {
      next();
 });
 
-app.get('', function(request, response){
+app.get('*', (request, response) => {
     response.sendFile(path.join(__dirname + '/index.html'));
 });
 
@@ -61,11 +61,9 @@ let mailOptions = {
 smtpTransport.sendMail(mailOptions, (error, res) => {
   if(error){
     console.log(error)
-    smtpTransport.close();
   }
   else{    
-    console.log("data was received", res)
-    smtpTransport.close();
+    console.log("data was received", res.body)
   }
 })
   smtpTransport.close();

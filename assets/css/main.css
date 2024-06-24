@@ -1660,7 +1660,7 @@ textarea:focus {
 }
 
 select {
-    background-image: url("images/IMG_7932.jpg");
+    background-image: url("/images/IMG_7932.jpg");
     background-size: 1.25rem;
     background-repeat: no-repeat;
     background-position: calc(100% - 1rem) center;
@@ -1903,6 +1903,7 @@ input[type="radio"]+label:before {
 .image.left {
     float: left;
     margin: 0 1.5em 1em 0;
+    /* margin: 0 1.5em 0 0; */
     top: 0.25em;
 }
 
@@ -2394,7 +2395,7 @@ input[type="button"]:disabled,
     justify-content: space-between;
     background-color: #1f1815;
     background-attachment: scroll, scroll;
-    background-image: url("/images/forest7.JPG");
+    background-image: url("/images/forest7.jpg");
     background-position: top left, top left;
     background-repeat: no-repeat !important;
     background-size: cover;
@@ -2457,7 +2458,7 @@ input[type="button"]:disabled,
 }
 
 #footer .icons a {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.87);
 }
 
 #footer .copyright {
@@ -2984,4 +2985,20 @@ body.is-touch .poptrox-popup .closer {
     padding: 3px 5px;
     margin-bottom: 5px;
     display: inline-block;
+}
+
+#three {
+    display: none;
+}
+
+#four {
+    display: none;
+}
+
+.hidden {
+    display: block;
+}
+
+.enbolden {
+    color: rgba(0, 0, 0, 0.623)
 }
